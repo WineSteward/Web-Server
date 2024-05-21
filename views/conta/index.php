@@ -5,7 +5,7 @@
 <br><br>
 <table class="table table-striped">
     <thead>
-    <th><h3>Name</h3></th>
+    <th><h3>Titulo da Conta</h3></th>
     <th><h3>Numero da Conta</h3></th>
     <th><h3>ID da conta</h3></th>
     <th><h3>Email da conta</h3></th>
