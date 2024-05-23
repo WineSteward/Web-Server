@@ -25,7 +25,7 @@ return [
         'create' => ['GET', 'DespesaController', 'create'],
         'store' =>  ['POST', 'DespesaController', 'store'],
         'read' =>   ['GET', 'DespesaController', 'read'],
-        'update' => ['POST', 'DespesaController'. 'update'],
+        'update' => ['POST', 'DespesaController', 'update'],
         'delete' => ['GET', 'DespesaController', 'delete'],
         'show' =>   ['GET', 'DespesaController', 'show'],
         'edit' =>   ['GET', 'DespesaController', 'edit']

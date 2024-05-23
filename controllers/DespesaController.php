@@ -14,15 +14,15 @@ class DespesaController extends Controller
 
     public function show($id)
     {
-        $conta = Conta::find($id);
+        $despesa = Despesa::find($id);
 
-        if (is_null($conta))
+        if (is_null($despesa))
         {
-            $this->redirectToRoute('conta', 'index');
+            $this->redirectToRoute('despesa', 'index', ['id' => $despesa->conta_id]);
         }
         else
         {
-            $this->renderView('conta', 'show', ['conta' => $conta]);
+            $this->renderView('despesa', 'show', ['despesa' => $despesa]);
         }
     }
 
@@ -39,19 +39,19 @@ class DespesaController extends Controller
 
     public function store($id)
     {
-        $conta = Conta::find($id);
-
         $despesa = new Despesa($this->getHTTPPost());
 
         if($despesa->is_valid())
         {
             $despesa->save();
 
-            $this->redirectToRoute('despesa', 'index', ['conta' => $conta]);
+            $this->redirectToRoute('despesa', 'index', ['id'=>$despesa->conta->id]);
             //redirecionar para o index
         }
         else
         {
+            $conta = Conta::find($id);
+
             $categorias = Categoria::all();
 
             $metodopagamentos = MetodoPagamento::all();
@@ -63,32 +63,39 @@ class DespesaController extends Controller
 
     public function edit($id)
     {
-        $conta = Conta::find($id);
+        $despesa = Despesa::find($id);
 
-        if(is_null($conta))
+        if(is_null($despesa))
         {
-            $this->redirectToRoute('conta', 'index');
+            $this->redirectToRoute('despesa', 'index', ['id' => $despesa->conta->id]);
         }
         else
         {
+            $categorias = Categoria::all();
+
+            $metodopagamentos = Metodopagamento::all();
+
             //mostrar a vista edit passando os dados por parâmetro
-            $this->renderView('conta', 'edit', ['conta' => $conta]);
+            $this->renderView('despesa', 'edit', ['despesa' => $despesa, 'categorias' => $categorias, 'metodopagamentos' => $metodopagamentos]);
         }
     }
 
     public function update($id)
     {
-        $conta = Conta::find($id);
-        $conta->update_attributes($this-> getHTTPPost());
-        if($conta->is_valid())
+        $despesa = Despesa::find($id);
+
+        $despesa->update_attributes($this->getHTTPPost());
+
+        if($despesa->is_valid())
         {
-            $conta->save();
-            $this->redirectToRoute('conta', 'index');
+
+            $despesa->save();
+            $this->redirectToRoute('despesa', 'index', ['id' => $despesa->conta->id]);
             //redirecionar para o index
         }
         else
         {
-            $this->renderView('conta', 'edit', ['conta'=> $conta]);
+            $this->renderView('conta', 'edit', ['despesa'=> $despesa]);
             //mostrar vista edit passando o modelo como parâmetro
         }
     }
