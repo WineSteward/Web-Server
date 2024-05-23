@@ -8,12 +8,10 @@ class Despesa extends \ActiveRecord\Model
     );
 
     static $belongs_to = array(
-        array('conta')
+        array('conta'),
+        array('categoria'),
+        array('metodopagamento')
     );
 
-    static $has_many = array(
-        array('categorias'),
-        array('metodoPagamentos')
-    );
 
 }

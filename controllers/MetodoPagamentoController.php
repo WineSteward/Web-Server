@@ -1,7 +1,7 @@
 <?php
 
 require_once 'Controller.php';
-require_once  './models/MetodoPagamento.php';
+require_once  './models/Metodopagamento.php';
 
 class MetodoPagamentoController extends Controller
 {

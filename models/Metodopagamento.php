@@ -1,6 +1,6 @@
 <?php
 
-class MetodoPagamento extends \ActiveRecord\Model
+class Metodopagamento extends \ActiveRecord\Model
 {
     static $validates_size_of = array(
         array('nome', 'within' => array(1,3), 'too_short' => 'too short!')

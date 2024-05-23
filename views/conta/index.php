@@ -22,7 +22,7 @@
                 <a href="index.php?c=conta&a=show&id=<?=$conta->id
                 ?>" class="btn btn-info" role="button">Account Details</a>
                 <a href="index.php?c=despesa&a=index&id=<?=$conta->id
-                ?>" class="btn btn-info" role="button">Despesas</a>
+                ?>" class="btn btn-info" role="button">Despesas Da Conta</a>
                 <a href="index.php?c=conta&a=edit&id=<?=$conta->id
                 ?>" class="btn btn-info" role="button">Edit</a>
                 <a href="index.php?c=conta&a=delete" class="btn btn-warning" role="button">Delete</a>

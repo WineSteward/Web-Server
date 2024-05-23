@@ -26,27 +26,38 @@ class DespesaController extends Controller
         }
     }
 
-    public function create()
+    public function create($id)
     {
-        $this->renderView('conta', 'create');
+        $conta = Conta::find($id);
+
+        $categorias = Categoria::all();
+
+        $metodopagamentos = MetodoPagamento::all();
+
+        $this->renderView('despesa', 'create', ['conta' => $conta, 'metodopagamentos' => $metodopagamentos, 'categorias' => $categorias]);
     }
 
-    public function store()
+    public function store($id)
     {
-        $conta = new Conta($this-> getHTTPPost());
-        ;
-        if($conta->is_valid())
-        {
-            $conta->save();
+        $conta = Conta::find($id);
 
-            $this->redirectToRoute('conta', 'index');
+        $despesa = new Despesa($this->getHTTPPost());
+
+        if($despesa->is_valid())
+        {
+            $despesa->save();
+
+            $this->redirectToRoute('despesa', 'index', ['conta' => $conta]);
             //redirecionar para o index
         }
         else
         {
+            $categorias = Categoria::all();
 
-            $this->renderView('conta', 'create', ['conta' => $conta]);
-            //mostrar vista create passando o modelo como parâmetro
+            $metodopagamentos = MetodoPagamento::all();
+
+            $this->renderView('despesa', 'create', ['conta' => $conta, 'categorias' => $categorias, 'metodopagamentos' => $metodopagamentos]);
+            //mostrar vista create passando os modelos como parâmetros
         }
     }
 
@@ -82,8 +93,15 @@ class DespesaController extends Controller
         }
     }
 
-    public function delete()
+    public function delete($id)
     {
+        $despesa = Despesa::find($id);
 
+        $conta = $despesa->conta;
+
+        $despesa->delete();
+
+        $this->renderView('despesa', 'index', ['conta'=> $conta]);
+        //redirecionar para o index
     }
 }
