@@ -6,22 +6,15 @@
 <table class="table table-striped">
     <thead>
     <th><h3>Nome da Categoria</h3></th>
-    <th><h3>User Actions</h3></th>
+    <th><h3>Quantidade de Despesas</h3></th>
     </thead>
     <tbody>
-    <?php foreach($categorias as $categoria) { ?>
         <tr>
             <td><?=$categoria->nome?></td>
-            <td>
-                <a href="index.php?c=categoria&a=show&id=<?=$categoria->id
-                ?>" class="btn btn-info" role="button">Categoria Info</a>
-                <a href="index.php?c=categoria&a=edit&id=<?=$categoria->id
-                ?>" class="btn btn-info" role="button">Edit</a>
-                <a href="index.php?c=categoria&a=delete" 
-                class="btn btn-warning" role="button">Delete</a>
-            </td>
         </tr>
-    <?php } ?>
+        <tr>
+            <td><?=$qtddcontas?></td>
+        </tr>
     </tbody>
 </table>
 

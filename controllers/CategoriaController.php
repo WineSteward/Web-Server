@@ -23,7 +23,9 @@ class CategoriaController extends Controller
         }
         else
         {
-            $this->renderView('categoria', 'show', ['categoria' => $categoria]);
+            $qtddcontas = $categoria->getTotalDespesas($id);
+
+            $this->renderView('categoria', 'show', ['categoria' => $categoria, 'qtddcontas' => $qtddcontas]);
         }
     }
 

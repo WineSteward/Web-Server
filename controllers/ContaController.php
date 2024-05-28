@@ -15,6 +15,7 @@ class ContaController extends Controller
 
     public function show($id)
     {
+
         $conta = Conta::find($id);
 
         if (is_null($conta))

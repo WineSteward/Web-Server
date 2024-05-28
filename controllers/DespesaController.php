@@ -50,6 +50,7 @@ class DespesaController extends Controller
         }
         else
         {
+
             $conta = Conta::find($id);
 
             $categorias = Categoria::all();

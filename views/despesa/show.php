@@ -1,4 +1,4 @@
-<h2 class="text-left top-space"> Detalhes da Despesa <?php $despesa->id ?></h2>
+<h2 class="text-left top-space"> Detalhes da Despesa</h2>
 <h2 class="top-space"></h2>
 
 
@@ -27,6 +27,9 @@
     </tbody>
 </table>
 
+<div class="d-flex justify-content-center"><h2>Descrição da Despesa:</h2></div>
+<div class="d-flex justify-content-center" style="background-color: lightgray;">
+    <p><?= $despesa->descricao?></p>
 <!-- Adicionar a descricao da despesa fora da tabela para nao ficar sobrelotada e mal formatada -->
 
 

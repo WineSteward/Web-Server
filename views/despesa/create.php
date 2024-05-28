@@ -15,15 +15,15 @@
     <input type="number" name="valor">
 </div>
 <div class="m-2">
-    <label for="metodopagamentos_id">Metodo de Pagamento:</label><br>
-    <select name="metodopagamentos_id">
+    <label for="metodopagamento_id">Metodo de Pagamento:</label><br>
+    <select name="metodopagamento_id">
         <?php foreach($metodopagamentos as $metodopagamento){?>
-            <option value="<?= $metodopagamento->id?>"> <?= $metodopagamento->nome; ?></option>
+            <option value="<?= $metodopagamento->id?>"><?= $metodopagamento->nome; ?></option>
         <?php } ?>
     </select>
 </div>
 <div class="m-2">
-    <label for="descrica">Descricao da Despesa:</label>
+    <label for="descricao">Descricao da Despesa:</label>
     <input type="text" name="descricao">
 </div>
 <div class="m-2">

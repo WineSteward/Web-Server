@@ -14,7 +14,7 @@ return [
         'create' => ['GET', 'ContaController', 'create'],
         'store' =>  ['POST', 'ContaController', 'store'],
         'read' =>   ['GET', 'ContaController', 'read'],
-        'update' => ['POST', 'ContaController'. 'update'],
+        'update' => ['POST', 'ContaController', 'update'],
         'delete' => ['GET', 'ContaController', 'delete'],
         'show' =>   ['GET', 'ContaController', 'show'],
         'edit' =>   ['GET', 'ContaController', 'edit']
@@ -36,7 +36,7 @@ return [
         'create' => ['GET', 'CategoriaController', 'create'],
         'store' =>  ['POST', 'CategoriaController', 'store'],
         'read' =>   ['GET', 'CategoriaController', 'read'],
-        'update' => ['POST', 'CategoriaController'. 'update'],
+        'update' => ['POST', 'CategoriaController', 'update'],
         'delete' => ['GET', 'CategoriaController', 'delete'],
         'show' =>   ['GET', 'CategoriaController', 'show'],
         'edit' =>   ['GET', 'CategoriaController', 'edit']
@@ -47,7 +47,7 @@ return [
         'create' => ['GET', 'MetodoPagamentoController', 'create'],
         'store' =>  ['POST', 'MetodoPagamentoController', 'store'],
         'read' =>   ['GET', 'MetodoPagamentoController', 'read'],
-        'update' => ['POST', 'MetodoPagamentoController'. 'update'],
+        'update' => ['POST', 'MetodoPagamentoController', 'update'],
         'delete' => ['GET', 'MetodoPagamentoController', 'delete'],
         'show' =>   ['GET', 'MetodoPagamentoController', 'show'],
         'edit' =>   ['GET', 'MetodoPagamentoController', 'edit']

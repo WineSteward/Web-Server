@@ -11,7 +11,7 @@
         $cfg->set_model_directory('./models');
         $cfg->set_connections(
             array(
-                'development' => 'mysql://root@localhost/bdextra',
+                'development' => 'mysql://root@localhost/dbextra',
             )
         );
     });
